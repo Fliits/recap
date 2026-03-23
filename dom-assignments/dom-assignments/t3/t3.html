@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h1>Assignment 3</h1>
+    <div id="target"></div>
+    <script>
+      const browserTypeAndVersion = navigator.userAgent;
+      const osType = navigator.platform;
+      const screenWidth = window.screen.width;
+      const screenHeight = window.screen.height;
+      const screenSpace = window.screen.availWidth * window.screen.availHeight;
+      const currentDate = new Date();
+      const currentDateAndTime = currentDate.toLocaleString('fi-FI', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+      });
+      const targetDiv = document.getElementById('target');
+      targetDiv.innerHTML = `
+        <p>Browser Type and Version: ${browserTypeAndVersion}</p>
+        <p>Operating System: ${osType}</p>
+        <p>Screen Width: ${screenWidth}px</p>
+        <p>Screen Height: ${screenHeight}px</p>
+        <p>Available Screen Space: ${screenSpace}px²</p>
+        <p>Date and Time: ${currentDateAndTime}</p>
+        `;
+    </script>
+  </body>
+</html>
